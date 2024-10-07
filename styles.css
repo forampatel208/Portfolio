@@ -342,3 +342,56 @@ span{
         margin-top: 4rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+.education {
+    padding: 5rem 9%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.education-box {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.edu-img {
+    flex: 1;
+    max-width: 200px; /* Adjust as needed */
+    margin-right: 2rem;
+}
+
+.edu-img img {
+    width: 100%;
+    border-radius: 1rem;
+    filter: drop-shadow(10px 10px 15px #046dff);
+}
+
+.edu-content {
+    flex: 2;
+}
+
+.edu-content h2 {
+    color: rgb(255, 166, 0);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.edu-content p {
+    font-size: 1.5rem;
+    color: white;
+}
+
