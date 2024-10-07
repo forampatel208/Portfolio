@@ -23,14 +23,15 @@ body{
 }
 
 .background {
-    position: absolute;
-    background-size: cover;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    z-index: -2;
     filter: drop-shadow(20px 20px 25px #161c4f);
 }
-
 @media (min-aspect-ratio: 16/9){
     .background{
         width: 100%;
@@ -46,80 +47,119 @@ body{
 
 header{
     margin-top: 20px;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 9%;
     background-color: transparent;
-    filter: drop-shadow(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 100;
 }
 
-.logo{
-    font-size: 3rem;
+.nav-btn {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.8rem;
+    background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    border-radius: 4rem;
+    font-size: 1.9rem;
     color: white;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease;
-    text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px #b74b4b;
-}
-
-.logo:hover{
-    transform: scale(1.1);
-    text-shadow: 0.2px 1px 3px #b74b4b;
-}
-
-nav a{
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
-    font-weight: 500;
+    letter-spacing: 0.3rem;
+    font-weight: bolder;
+    border: 3px solid white;
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    margin: 0 3.5rem;
 }
 
-nav a:hover,
-nav a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+.nav-btn:hover {
+    background: linear-gradient(45deg, #9e5dff62, #005eff62);
+    box-shadow: 0 5px 15px rgba(0, 94, 255, 0.4);
+    transform: translateY(-2.6px);
 }
 
-@media(max-width:995px){
-    nav{
-        position: absolute;
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+    .nav-btn {
+        margin: 0 1.3rem;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 767px) {
+    .nav-btn {
+        margin: 0 0.5rem;
+    }
+    .nav-links {
         display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        flex-direction: column;
+        width: 100%;
         background-color: transparent;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
     }
-
-    nav.active{
+    .nav-links li {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu {
         display: block;
-    }
-
-    nav a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    nav a:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        cursor: pointer;
     }
 }
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: none;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: transparent;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+        cursor: pointer;
+    }
+}
+
 
 section{
     min-height: 100vh;
@@ -134,24 +174,37 @@ section{
     background-color: transparent;
 }
 
+.home-content {
+    background: linear-gradient(45deg, #005effa4, #9e5dff8a);
+    background-color: rgba(0, 2, 95, 0.502);
+    border-radius: 3rem;
+    border: #121956;
+    box-shadow: 0 2px 15px #1431d2;
+    padding: 1rem;
+}
+
 .home .home-content h1{
+    color: rgb(255, 166, 0);
     font-size: 6rem;
-    font-weight: 700;
+    font-weight: 800;
+    text-shadow: 2px 1px rgb(255, 233, 146);
     line-height: 1.3;
 }
 
 span{
-    color: #b74b4b;
+    color: white;
 }
 
 .home-content h3{
     font-size: 4rem;
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 1px rgb(255, 233, 146);
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .home-content p{
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .home-img{
@@ -162,9 +215,7 @@ span{
     position: relative;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
     filter: drop-shadow(20px 20px 25px #046dff);
-    cursor: pointer;
     transition: 0.2s linear;
 }
 
@@ -180,40 +231,39 @@ span{
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #b74b4b;
+    border: 0.2rem solid white;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    color: #b74b4b;
+    color: white;
 }
 
 .social-icons a:hover{
     color: black;
     transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0  0 25px #b74b4b;
+    background-color: white;
+    box-shadow: 0  0 25px white;
 }
 
 .btn{
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: black;
     border-radius: 4rem;
-    font-size: 1.6rem;
-    color: #b74b4b;
+    font-size: 1.9rem;
+    color: white;
     letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid #b74b4b;
+    font-weight: bolder;
+    border: 3px solid white;
     transition: 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover{
     transform: scale3d(1.03);
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 20px black;
 }
 
 .typing-text{
@@ -228,24 +278,24 @@ span{
 
 .typing-text span::before{
     content: "software Developer";
-    color: #b74b4b;
+    color: white;
     animation: words 20s infinite;
 }
 
 .typing-text span::after{
     content: "";
-    background-color: black;
+    background-color: transparent;
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid black;
+    border-left: 3px solid transparent;
     right: -8;
     animation: cursor 0.6s infinite;
 }
 
 @keyframes cursor{
     to{
-        border-left: 3px solid #b74b4b;
+        border-left: 3px solid white;
     }
 }
 
