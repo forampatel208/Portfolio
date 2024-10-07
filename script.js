@@ -1,8 +1,4 @@
-//get video
-var video = 
-document.getElementById("background");
-
-const typingText = document.querySelector('.typing-text span');
+/*const typingText = document.querySelector('.typing-text span');
 const words = [" Developer", " Data Scientist", " AI Enthusiast"];
 let i = 0;
 let j = 0;
@@ -26,4 +22,8 @@ function type() {
     setTimeout(type, isDeleting ? 50 : 100);
 }
 
-document.addEventListener('DOMContentLoaded', type);
+document.addEventListener('DOMContentLoaded', type); */
+
+document.querySelector('.menu').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
