@@ -1,28 +1,44 @@
-/*const typingText = document.querySelector('.typing-text span');
-const words = [" Developer", " Data Scientist", " AI Enthusiast"];
-let i = 0;
-let j = 0;
-let currentWord = '';
-let isDeleting = false;
+const textArray = ["Web Developer", "Software Developer", "Prompt Engineer", "Designer"];
+let textIndex = 0;
+let letterIndex = 0;
+const typingText = document.querySelector('.typing-text span');
+const cursor = document.querySelector('.cursor');
 
 function type() {
-    if (isDeleting && currentWord.length === 0) {
-        isDeleting = false;
-        j = (j + 1) % words.length;
-    } else if (!isDeleting && currentWord.length === words[j].length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-    } else if (isDeleting) {
-        currentWord = words[j].substring(0, currentWord.length - 1);
+    if (letterIndex < textArray[textIndex].length) {
+        typingText.textContent += textArray[textIndex].charAt(letterIndex);
+        letterIndex++;
+        setTimeout(type, 150); // Typing speed
     } else {
-        currentWord = words[j].substring(0, currentWord.length + 1);
+        cursor.style.opacity = "0"; // Hide cursor when typing is done
+        setTimeout(deleteText, 2000); // Pause before deleting
     }
-
-    typingText.textContent = currentWord;
-    setTimeout(type, isDeleting ? 50 : 100);
 }
 
-document.addEventListener('DOMContentLoaded', type); */
+function deleteText() {
+    if (letterIndex > 0) {
+        typingText.textContent = textArray[textIndex].substring(0, letterIndex - 1);
+        letterIndex--;
+        setTimeout(deleteText, 100); // Deleting speed
+    } else {
+        textIndex = (textIndex + 1) % textArray.length; // Cycle through the texts
+        cursor.style.opacity = "1"; // Show cursor before typing next
+        setTimeout(type, 500); // Pause before typing next
+    }
+}
+
+// Start typing animation
+document.addEventListener('DOMContentLoaded', () => {
+    type();
+    blinkCursor(); // Start cursor blinking
+});
+
+function blinkCursor() {
+    setInterval(() => {
+        cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
+    }, 500); // Adjust blink speed
+}
+
 
 document.querySelector('.menu').addEventListener('click', function() {
     document.querySelector('.nav-links').classList.toggle('active');
