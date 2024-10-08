@@ -393,9 +393,8 @@ span{
 
 .education-box h2 span {
     color: #ffd700;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2rem; 
-    background: rgba(255, 166, 0, 0.1); 
     padding: 0.3rem 0.6rem;
     border-radius: 0.4rem;
 }
@@ -403,6 +402,7 @@ span{
 
 .edu-content p {
     font-size: 1.5rem;
+    font-weight: 700;
     color: white;
 }
 
