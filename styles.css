@@ -290,6 +290,7 @@ span{
     display: flex;
     align-items: center;
     background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    background-color: rgba(0, 2, 95, 0.502);
     border-radius: 2rem;
     padding: 2rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
@@ -346,6 +347,7 @@ span{
     display: flex;
     align-items: center;
     background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    background-color: rgba(0, 2, 95, 0.502);
     border-radius: 2rem;
     padding: 2rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
@@ -460,6 +462,7 @@ span{
     display: flex;
     align-items: center;
     background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    background-color: rgba(0, 2, 95, 0.502);
     border-radius: 2rem;
     padding: 2rem;
     width: 100%;
@@ -542,6 +545,7 @@ span{
     flex-direction: column;
     align-items: center;
     background: linear-gradient(45deg, #005eff62, #9e5dff62);
+    background-color: rgba(0, 2, 95, 0.502);
     border-radius: 2rem;
     padding: 2rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
@@ -569,6 +573,7 @@ span{
 
 .experience-message {
     background: linear-gradient(45deg, #005effa4, #9e5dff8a);
+    background-color: rgba(0, 2, 95, 0.502);
     background-color: rgba(0, 2, 95, 0.502);
     border-radius: 3rem;
     border: #121956;
