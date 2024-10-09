@@ -73,7 +73,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 2.8rem;
-    background: linear-gradient(45deg,  #005eff62, #9e5dff62);
+    background: linear-gradient(45deg,  #005eff90, #9e5dffa9);
     border-radius: 4rem;
     font-size: 1.9rem;
     color: white;
@@ -86,7 +86,7 @@ header{
 }
 
 .nav-btn:hover {
-    background: linear-gradient(45deg, #9e5dff8f, #005effac);
+    background: linear-gradient(45deg, #9e5dffc1, #005effbe);
     box-shadow: 0 5px 15px rgba(0, 94, 255, 0.4);
     transform: translateY(-2.6px);
 }
@@ -105,7 +105,7 @@ header{
     transition: 0.3s ease;
     cursor: pointer;
     margin: 0 3.5rem;
-    background: linear-gradient(45deg, #9e5dff, #005eff);
+    background: linear-gradient(45deg, #9e5dffc1, #005effbe);
     box-shadow: 0 5px 15px rgba(0, 94, 255, 0.4);
 }
 
@@ -117,7 +117,7 @@ header{
         flex-direction: column;
         width: 100%;
         height: 100vh;
-        background: linear-gradient(45deg,  #002a71f8, #520abfce);
+        background: linear-gradient(45deg,  #01205593, #7636d7a1);
         position: fixed;
         top: -100%; 
         left: 0;
