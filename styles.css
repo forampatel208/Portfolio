@@ -79,39 +79,66 @@ header{
 }
 
 /* For tablets and larger screens */
-@media (min-width: 768px) {
-    .nav-btn {
-        margin: 0 1.3rem;
-    }
-}
-
 /* For mobile screens */
 @media (max-width: 767px) {
-    .nav-btn {
-        margin: 0 0.5rem;
-    }
+    /* Hide desktop nav links initially */
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
         position: fixed;
         top: 60px;
         left: 0;
         right: 0;
+        z-index: 999;
+        transition: all 0.3s ease;
     }
-    .nav-links li {
-        text-align: center;
-        margin: 1rem 0;
-    }
+
+    /* Show menu links when active */
     .nav-links.active {
         display: flex;
     }
+
+    /* Style each link for mobile */
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    /* Style the nav buttons for mobile */
+    .nav-btn {
+        width: 90%;
+        padding: 1rem;
+        margin: 0.5rem auto;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    /* Menu icon (hamburger) style */
     .menu {
         display: block;
         cursor: pointer;
+        z-index: 1000;
+        color: white;
+        font-size: 2rem;
+    }
+
+    .menu i {
+        transition: color 0.3s ease;
+    }
+
+    .menu:hover i {
+        color: #9e5dff;
     }
 }
+
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+    .menu {
+        display: none;
+    }
+}
+
 
 .nav-links {
     display: flex;
