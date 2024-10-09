@@ -1,4 +1,4 @@
-const textArray = ["Web Developer", "Software Developer", "Prompt Engineer", "Designer"];
+const textArray = ["Web Developer", "Prompt Engineer", "Designer"];
 let textIndex = 0;
 let letterIndex = 0;
 const typingText = document.querySelector('.typing-text span');
