@@ -597,6 +597,7 @@ span{
 .certificates p {
     font-size: 1.8rem;
     margin-bottom: 3rem;
+    cursor: pointer;
 }
 
 .certificates-grid {
